@@ -6,63 +6,32 @@
         xmlns:local="clr-namespace:wpfSample"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="800">
-    <Grid x:Name="MainGrid" Background="Green">
+    <Grid Background="#153655" Opacity="1">
         <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="30"/>
+            <RowDefinition Height="100"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="30"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
-        <!--<Button Grid.Row="0" Grid.Column="0" Background="Red"/>-->
-        <Label Grid.Row="0" Grid.ColumnSpan="2" Foreground="White" HorizontalAlignment="Center" Content="Grid의 영역을 초록색으로 표시하고 있습니다."/>
-        <Label Grid.Row="1" Grid.Column="0" Foreground="White" HorizontalAlignment="Center" Content="StackPaenl의 영역을 빨간색으로 표시하고 있습니다."/>
-        <Label Grid.Row="1" Grid.Column="1" Foreground="White" HorizontalAlignment="Center" Content="WrapPanel의 영역을 파란색으로 표시하고 있습니다."/>
-        <Label Grid.Row="3" Grid.Column="0" Foreground="White" HorizontalAlignment="Center" Content="DockPanel의 영역을 노란색으로 표시하고 있습니다."/>
-        <Label Grid.Row="3" Grid.Column="1" Foreground="White" HorizontalAlignment="Center" Content="TabControl의 영역을 보라색으로 표시하고 있습니다."/>
-        <Label Grid.Row="5" Grid.ColumnSpan="2" Foreground="White" HorizontalAlignment="Center" Content="Canvs의 영역을 주황색으로 표시하고 있습니다."/>
-        <Border Grid.Row="2" Background="Red">
-            <StackPanel Background="White" Margin="10">
-                <Button Content="스택의 버튼1"></Button>
-                <Button Content="스택의 버튼2"></Button>
-                <Button Content="스택의 버튼3"></Button>
+        <!--<Border Grid.Row="0" Margin="20 20 20 0" Background="#1D3D5B" Opacity="0.9" CornerRadius="50,50,0,0"/>
+        <Border Grid.Row="1" Margin="20 0 20 0" Background="#1D3D5B" Opacity="0.9" CornerRadius="0,0,0,0"/>-->
+        <Border Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="20 20 20 20" Background="#1D3D5B" Opacity="0.9" CornerRadius="50,50,50,50"/>
+        <Label Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="20" Content="하루 제안" Padding="80 50 0 0"/>
+        <Border Grid.Row="1" Grid.Column="0" Margin="40 20 20 20" Background="#254460" Opacity="0.9" CornerRadius="50,50,50,50">
+            <StackPanel>
+                <Canvas>
+                    <Ellipse Width="10" Height="10" Fill="GreenYellow" Canvas.Left="0" Canvas.Top="0" Margin="160,70,0,0"/>
+                </Canvas>
+                <Label Foreground="White" FontSize="20" Content="우산" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,0"/>
+                <Label Foreground="White" FontSize="20" Content="팔요없음" Height="40" HorizontalAlignment="Center" Margin="100,0,0,0"/>
             </StackPanel>
         </Border>
-        <Border Grid.Row="2" Grid.Column="1" Background="Blue">
-            <WrapPanel Background="White" Margin="10">
-                <Button Height="50" Width="100" Content="버튼1"></Button>
-                <Button Width="100" Content="버튼2"></Button>
-                <Button Width="100" Content="버튼3"></Button>
-            </WrapPanel>
-        </Border>
-        <Border Grid.Row="4" Background="Yellow">
-            <DockPanel Background="White" Margin="10">
-                <Button DockPanel.Dock="Top" Content="상"></Button>
-                <Button DockPanel.Dock="Bottom" Content="하"></Button>
-                <Button DockPanel.Dock="Left" Content="좌"></Button>
-                <Button DockPanel.Dock="Right" Content="우"></Button>
-                <Button Content="중앙"></Button>
-            </DockPanel>
-        </Border>
-        <Border Grid.Row="4" Grid.Column="1" Background="Purple">
-            <TabControl Background="White" Margin="10">
-                <TabItem Header="1번 영역"/>
-                <TabItem Header="2번 영역"/>
-                <TabItem Header="3번 영역"/>
-            </TabControl>
-        </Border>
-        <Border Grid.Row="6" Grid.ColumnSpan="2" Background="Orange">
-            <Canvas Margin="10">
-                <Rectangle Fill="Red" Width="100" Height="100" Canvas.Left="250" Canvas.Top="14"/>
-                <Ellipse Fill="Beige" Width="120" Height="80" Canvas.Left="400" Canvas.Top="23"/>
-            </Canvas>
-        </Border>
+        <!--<Label Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20" Content="우산" Padding="200 50 0 0"/>
+        <Label Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20" Content="필요없음" Padding="220 80 0 0"/>-->
     </Grid>
 </Window>
 
