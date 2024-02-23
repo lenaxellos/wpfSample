@@ -24,5 +24,34 @@ namespace wpfSample
         {
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnLayout01_Click(object sender, RoutedEventArgs e)
+        {
+            Layout01 layout01 = new Layout01();
+            layout01.Show();
+        }
+
+        private void BtnMaterialDesign_Click(object sender, RoutedEventArgs e)
+        {
+            MaterialDesign materialDesign = new MaterialDesign();
+            materialDesign.Show();
+        }
+
+        private void BtnWeather_Click(object sender, RoutedEventArgs e)
+        {
+            Weather weather = new Weather();
+            weather.Show();
+        }
+
+        private void BtnBinding_Click(object sender, RoutedEventArgs e)
+        {
+            Binding binding = new Binding();
+            binding.Show();
+        }
     }
 }

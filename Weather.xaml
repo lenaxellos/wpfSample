@@ -1,14 +1,16 @@
-﻿<Window x:Class="wpfSample.MainWindow"
+﻿<Window x:Class="wpfSample.Weather"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfSample"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
+        Title="Weather" Height="600" Width="800">
     <Grid Background="#153655" Opacity="1">
         <Grid.RowDefinitions>
             <RowDefinition Height="100"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -16,20 +18,19 @@
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
         <!--<Border Grid.Row="0" Margin="20 20 20 0" Background="#1D3D5B" Opacity="0.9" CornerRadius="50,50,0,0"/>
-        <Border Grid.Row="1" Margin="20 0 20 0" Background="#1D3D5B" Opacity="0.9" CornerRadius="0,0,0,0"/>-->
+    <Border Grid.Row="1" Margin="20 0 20 0" Background="#1D3D5B" Opacity="0.9" CornerRadius="0,0,0,0"/>-->
         <Border Grid.Row="0" Grid.RowSpan="4" Grid.ColumnSpan="2" Margin="20 20 20 20" Background="#1D3D5B" Opacity="0.9" CornerRadius="50,50,50,50"/>
-        <Label Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="20" Content="메인 화면" Padding="80 50 0 0"/>
+        <Label Grid.Row="0" Grid.Column="0" Foreground="White" FontSize="20" Content="하루 제안" Padding="80 50 0 0"/>
         <Border Grid.Row="1" Grid.Column="0" Margin="40 20 20 20" Background="#254460" Opacity="0.9" CornerRadius="50,50,50,50">
             <StackPanel>
-                <Button x:Name="BtnLayout01" Background="Gray" Foreground="White" Margin="10" Content="Layout01" Click="BtnLayout01_Click"/>
-                <Button x:Name="BtnMaterialDesign" Background="Gray" Foreground="White" Margin="10" Content="MaterialDesign" Click="BtnMaterialDesign_Click"/>
-                <Button x:Name="BtnWeather" Background="Gray" Foreground="White" Margin="10" Content="Weather" Click="BtnWeather_Click"/>
-                <Button x:Name="BtnBinding" Background="Gray" Foreground="White" Margin="10" Content="Binding" Click="BtnBinding_Click"/>
+                <Canvas>
+                    <Ellipse Width="10" Height="10" Fill="GreenYellow" Canvas.Left="0" Canvas.Top="0" Margin="160,70,0,0"/>
+                </Canvas>
+                <Label Foreground="White" FontSize="20" Content="우산" Height="40" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,20,0,0"/>
+                <Label Foreground="White" FontSize="20" Content="팔요없음" Height="40" HorizontalAlignment="Center" Margin="100,0,0,0"/>
             </StackPanel>
         </Border>
         <!--<Label Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20" Content="우산" Padding="200 50 0 0"/>
-        <Label Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20" Content="필요없음" Padding="220 80 0 0"/>-->
+    <Label Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20" Content="필요없음" Padding="220 80 0 0"/>-->
     </Grid>
 </Window>
-
-    
