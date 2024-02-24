@@ -31,11 +31,15 @@
             <TextBlock x:Name="txtBL2" Height="25" Margin="10"></TextBlock>
         </StackPanel>
 
-        <!--C# Property Binding-->
+        <!--C# 종속Property가 아닌 Property에 대한 Binding-->
         <Label Grid.Row="2" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="C# Property Binding"/>
         <StackPanel Grid.Row="2" Grid.Column="1">
-            <TextBox  x:Name="txtBox3" Height="25" Margin="10"></TextBox>
+            <TextBox  x:Name="txtBox3" Height="25" Margin="10" Text="{Binding MyFileName}"></TextBox>
             <TextBlock Grid.Row="2" Grid.Column="1" x:Name="txtBL3" Height="25" Margin="10"></TextBlock>
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <ComboBox x:Name="cbofiles" Width="500" Margin="10"></ComboBox>
+                <Button x:Name="BTNComboSelect" Foreground="Black" Content="조회" Width="100" Margin="10" Background="#FFD1CCD8" Click="BTNComboSelect_Click"/>
+            </StackPanel>
         </StackPanel>
 
     </Grid>
