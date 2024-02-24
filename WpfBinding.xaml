@@ -1,11 +1,11 @@
-﻿<Window x:Class="wpfSample.Binding"
+﻿<Window x:Class="wpfSample.WpfBinding"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfSample"
         mc:Ignorable="d"
-        Title="Binding" Height="450" Width="800">
+        Title="WpfBinding" Height="300" Width="800">
     <Grid ShowGridLines="True" Background="DimGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
@@ -18,29 +18,27 @@
         </Grid.RowDefinitions>
 
         <!--ElementName Binding-->
-        <Label Grid.Row="0" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="xaml Binding"/>
+        <Label Grid.Row="0" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="1.xaml Binding"/>
         <StackPanel Grid.Row="0" Grid.Column="1">
             <TextBox x:Name="txtBox" Height="25" Margin="10"/>
             <TextBlock x:Name="txtBL" Height="25" Margin="10" Text="{Binding ElementName=txtBox, Path=Text}"></TextBlock>
         </StackPanel>
 
         <!--ElemnetName C# code Binding-->
-        <Label Grid.Row="1" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="C# Binding"/>
+        <Label Grid.Row="1" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="2.C# Binding"/>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBox  x:Name="txtBox2" Height="25" Margin="10"></TextBox>
             <TextBlock x:Name="txtBL2" Height="25" Margin="10"></TextBlock>
         </StackPanel>
 
         <!--C# 종속Property가 아닌 Property에 대한 Binding-->
-        <Label Grid.Row="2" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="C# Property Binding"/>
+        <TextBlock Grid.Row="2" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White" Text="3.C# Property Binding"/>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <TextBox  x:Name="txtBox3" Height="25" Margin="10" Text="{Binding MyFileName}"></TextBox>
-            <TextBlock Grid.Row="2" Grid.Column="1" x:Name="txtBL3" Height="25" Margin="10"></TextBlock>
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                 <ComboBox x:Name="cbofiles" Width="500" Margin="10"></ComboBox>
                 <Button x:Name="BTNComboSelect" Foreground="Black" Content="조회" Width="100" Margin="10" Background="#FFD1CCD8" Click="BTNComboSelect_Click"/>
             </StackPanel>
         </StackPanel>
-
     </Grid>
 </Window>

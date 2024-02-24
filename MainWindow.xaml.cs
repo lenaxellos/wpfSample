@@ -50,8 +50,8 @@ namespace wpfSample
 
         private void BtnBinding_Click(object sender, RoutedEventArgs e)
         {
-            Binding binding = new Binding();
-            binding.Show();
+            WpfBinding wpfbinding = new WpfBinding();
+            wpfbinding.Show();
         }
     }
 }

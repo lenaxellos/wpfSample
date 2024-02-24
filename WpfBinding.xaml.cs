@@ -20,16 +20,29 @@ namespace wpfSample
     /// <summary>
     /// Binding.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class Binding : Window
+    public partial class WpfBinding : Window
     {
         MyFile myFile = new MyFile();
-        string[] files = { };        
+        string[] files = { };
 
-        public Binding()
+        public WpfBinding()
         {
-            InitializeComponent();
+            InitializeComponent();                       
 
+            //2.ElemnetName C# code Binding
+            codeBinding();
+
+            //3.Property binding
             this.DataContext = myFile;            
+        }
+
+        //2.ElemnetName C# code Binding
+        private void codeBinding()
+        {
+            Binding binding = new Binding();
+            binding.Source = txtBox2;                               //원본소스 지정
+            binding.Path = new PropertyPath(TextBox.TextProperty);  //원본소스의 Property지정
+            txtBL2.SetBinding(TextBlock.TextProperty, binding);     //타겟에 binding       
         }
 
         private void GetfolderFilesName(string folderName)
@@ -51,7 +64,7 @@ namespace wpfSample
         }
     }
 
-    //알림 통보
+    //3.Property binding - 알림 통보
     class Notifier : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -62,7 +75,7 @@ namespace wpfSample
         }
     }
 
-    //파일명 설정
+    //3.Property binding - 파일명 설정
     class MyFile : Notifier
     {
         private string _fileName;

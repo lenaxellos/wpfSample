@@ -66,13 +66,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Binding.xaml.cs">
-      <DependentUpon>Binding.xaml</DependentUpon>
+    <Compile Include="WpfBinding.xaml.cs">
+      <DependentUpon>WpfBinding.xaml</DependentUpon>
     </Compile>
     <Compile Include="Weather.xaml.cs">
       <DependentUpon>Weather.xaml</DependentUpon>
     </Compile>
-    <Page Include="Binding.xaml">
+    <Page Include="WpfBinding.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
