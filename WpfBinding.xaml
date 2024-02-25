@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wpfSample"
         mc:Ignorable="d"
-        Title="WpfBinding" Height="300" Width="800">
+        Title="WpfBinding" Height="500" Width="800">
     <Grid ShowGridLines="True" Background="DimGray">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="0.2*"/>
@@ -15,30 +15,55 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
 
-        <!--ElementName Binding-->
+        <!--1.ElementName Binding-->
         <Label Grid.Row="0" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="1.xaml Binding"/>
         <StackPanel Grid.Row="0" Grid.Column="1">
             <TextBox x:Name="txtBox" Height="25" Margin="10"/>
             <TextBlock x:Name="txtBL" Height="25" Margin="10" Text="{Binding ElementName=txtBox, Path=Text}"></TextBlock>
         </StackPanel>
 
-        <!--ElemnetName C# code Binding-->
+        <!--2.ElemnetName C# code Binding-->
         <Label Grid.Row="1" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" Content="2.C# Binding"/>
         <StackPanel Grid.Row="1" Grid.Column="1">
             <TextBox  x:Name="txtBox2" Height="25" Margin="10"></TextBox>
             <TextBlock x:Name="txtBL2" Height="25" Margin="10"></TextBlock>
         </StackPanel>
 
-        <!--C# 종속Property가 아닌 Property에 대한 Binding-->
-        <TextBlock Grid.Row="2" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White" Text="3.C# Property Binding"/>
+        <!--3.C# 종속Property가 아닌 Property에 대한 Binding-->
+        <TextBlock Grid.Row="2" Grid.Column="0" Width="100" Margin="10" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White" Text="3.C# Property Binding - INotifyPropertyChanged 사용 통보알림"/>
         <StackPanel Grid.Row="2" Grid.Column="1">
             <TextBox  x:Name="txtBox3" Height="25" Margin="10" Text="{Binding MyFileName}"></TextBox>
             <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
                 <ComboBox x:Name="cbofiles" Width="500" Margin="10"></ComboBox>
                 <Button x:Name="BTNComboSelect" Foreground="Black" Content="조회" Width="100" Margin="10" Background="#FFD1CCD8" Click="BTNComboSelect_Click"/>
             </StackPanel>
+        </StackPanel>
+
+        <!--4.ObservableCollection - 컬렉션 타입 통보알림  -->
+        <TextBlock Grid.Row="3" Grid.Column="0" Width="80" Margin="10" VerticalAlignment="Center" TextWrapping="Wrap" Foreground="White" Text="4.ObservableCollection - 컬렉션 타입 통보알림"/>
+        <!--<ListView x:Name="listView4" Grid.Row="3" Grid.Column="1" Margin="10" Foreground="White" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding MyFileName2}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>-->
+        <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal">
+            <ListBox x:Name="listBox4"  Width="500" HorizontalAlignment="Left" Margin="10">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel>
+                            <ListBoxItem Content="{Binding MyFileName2}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button x:Name="BTNListSelect" Foreground="Black" Content="조회" Width="100" Margin="10" Background="#FFD1CCD8" Click="BTNListSelect_Click"/>
         </StackPanel>
     </Grid>
 </Window>
