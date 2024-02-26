@@ -53,5 +53,11 @@ namespace wpfSample
             WpfBinding wpfbinding = new WpfBinding();
             wpfbinding.Show();
         }
+
+        private void BtnResource_Click(object sender, RoutedEventArgs e)
+        {
+            ResourceStyle resourceStyle = new ResourceStyle();
+            resourceStyle.Show();
+        }
     }
 }

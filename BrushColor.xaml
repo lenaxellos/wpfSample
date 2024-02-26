@@ -1,0 +1,7 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <SolidColorBrush x:Key="colorBgSearchPanel" Color="#242323"/>
+    <SolidColorBrush x:Key="colorSeg_N" Color="#10ffffff"/>
+    <SolidColorBrush x:Key="colorSegLine_N" Color="#d8d8d8"/>
+    <SolidColorBrush x:Key="colorSeg_H" Color="#20ffffff"/>
+</ResourceDictionary>

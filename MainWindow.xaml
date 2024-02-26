@@ -25,6 +25,7 @@
                 <Button x:Name="BtnMaterialDesign" Background="Gray" Foreground="White" Margin="10" Content="MaterialDesign" Click="BtnMaterialDesign_Click"/>
                 <Button x:Name="BtnWeather" Background="Gray" Foreground="White" Margin="10" Content="Weather" Click="BtnWeather_Click"/>
                 <Button x:Name="BtnBinding" Background="Gray" Foreground="White" Margin="10" Content="Binding" Click="BtnBinding_Click"/>
+                <Button x:Name="BtnResource" Background="Gray" Foreground="White" Margin="10" Content="ResourceStyle" Click="BtnResource_Click"/>
             </StackPanel>
         </Border>
         <!--<Label Grid.Row="1" Grid.Column="0" Foreground="White" FontSize="20" Content="우산" Padding="200 50 0 0"/>

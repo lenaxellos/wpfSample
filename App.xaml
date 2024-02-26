@@ -5,12 +5,38 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <!--1. MaterialDesignThemes 적용-->
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.DeepPurple.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                <!--DynamicStyle은 따로 Dictionary1.xaml 파일에서 작성해서 가져오자.
+                    보통 BrushColor.xaml - Color 값들을 관리
+                         StyleCommon.xaml - UI Control 값들을 관리
+                    파일 따로 관리-->
+                <ResourceDictionary Source="StyleCommon.xaml"/>
+                <ResourceDictionary Source="BrushColor.xaml"/>
+                <ResourceDictionary Source="Dictionary1.xaml"/> 
             </ResourceDictionary.MergedDictionaries>
+            
+            <!--Resource Style 적용-->
+            <Style TargetType="Button" x:Key="StaticStyle">
+                <Setter Property="Background" Value="BlueViolet"/>
+                <Setter Property="Foreground" Value="White"/>
+                <Setter Property="FontSize" Value="20"/>
+            </Style>
+            <Style TargetType="{x:Type Control}" x:Key="BaseStaticStyle">
+                <Setter Property="Background" Value="DarkSalmon"/>
+                <Setter Property="Foreground" Value="White"/>
+            </Style>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStaticStyle}">
+                <Setter Property="FontSize" Value="30"/>
+                <Setter Property="Margin" Value="10"/>
+            </Style>
+            <Style TargetType="{x:Type Button}" x:Key="ChildStaticStyle" BasedOn="{StaticResource BaseStaticStyle}">
+                <Setter Property="FontSize" Value="40"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
